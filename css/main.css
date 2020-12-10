@@ -1,17 +1,16 @@
 body {
-    background-color: #ede9f5;
+    background-color: #9a89bb;
     font-size: 14px;
     line-height: 1.5;
     font-family: Tahoma;
 }
 
+
 .header {
-    position:fixed;
     width: 100%;
     height: 100px;
     background-color: #3f51b5;
 }
-
 .header-logo {
     display: block;
     width: 64px;
@@ -22,13 +21,11 @@ body {
     margin: 10px;
     padding: 5px;
 }
-
 .header-logo:hover {
     cursor: pointer;
-    background: url(../img/logo1.png);
+    box-shadow: 0 5px 10px #12f72e;
 
 }
-
 .header-menu {
     width: auto;
     height: 50px;
@@ -36,11 +33,9 @@ body {
     list-style: none;
     margin: 30px auto;
 }
-
 .header-menu li {
     display: inline;
 }
-
 .header-link {
     cursor: pointer;
     text-decoration: none;
@@ -48,7 +43,6 @@ body {
     color: #fff;
     margin: 10px;
 }
-
 .header-link:hover {
     background-color: #0ee228;
     color: #110ee8;
@@ -56,32 +50,71 @@ body {
     border-radius: 5%;
 }
 
-#id_wradchuk {
-    margin: 10px 0px;
-    background-color: #f00;
-    height: 500px;
+
+
+#card {
+    width: 50%;
+    padding: 20px;
+    margin: 30px auto;
+    background-color: #94b5e2;
+    box-shadow: 0 5px 10px #ccc;
+    border-radius: 10px;
+}
+.card-photo {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.card-title {
+    font-size: 20px;
+    text-align: center;
+    color: #131c86;
+}
+.card-text {
+    font-size: 14px;
+}
+.subtitle {
+    font-size: 18px;
+    color: #386920;
+}
+.card-list {
+    padding-left: 0px;
+    list-style-position: inside;
+    font-size: 14px;
 }
 
-#id_contact {
-    margin: 10px 0px;
-    background-color: #0f0;
-    height: 500px;
+
+#crib {
+    width: 50%;
+    padding: 20px;
+    margin: 30px auto;
+    background-color: #f1cfcf;
+    box-shadow: 0 5px 10px #ccc;
+    border-radius: 10px;
+}
+
+#res {
+    width: 50%;
+    padding: 20px;
+    margin: 30px auto;
+    background-color: #94b5e2;
+    box-shadow: 0 5px 10px #ccc;
+    border-radius: 10px;
 }
 
 
-#id_link {
-    margin: 10px 0px;
-    background-color: #00f;
-    height: 500px;
+.footer {
+    width: 100%;
+    margin-top: 100px;
+    background: #541c1c;
+    height: 100px;
 }
 
-
-#id_html5css3 {
-    margin: 10px 0px;
-    background-color: #f0f;
-    height: 500px;
+.footer p {
+    padding: 20px 20px 20px 20px;
+    color: #e2a700;
 }
-
-
 
 
