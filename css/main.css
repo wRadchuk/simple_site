@@ -1,0 +1,87 @@
+body {
+    background-color: #ede9f5;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: Tahoma;
+}
+
+.header {
+    position:fixed;
+    width: 100%;
+    height: 100px;
+    background-color: #3f51b5;
+}
+
+.header-logo {
+    display: block;
+    width: 64px;
+    height: 64px;
+    float: left;
+    box-shadow: 0 5px 10px #87fffd;
+    border-radius: 50%;
+    margin: 10px;
+    padding: 5px;
+}
+
+.header-logo:hover {
+    cursor: pointer;
+    background: url(../img/logo1.png);
+
+}
+
+.header-menu {
+    width: auto;
+    height: 50px;
+    float: right;
+    list-style: none;
+    margin: 30px auto;
+}
+
+.header-menu li {
+    display: inline;
+}
+
+.header-link {
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 10px;
+}
+
+.header-link:hover {
+    background-color: #0ee228;
+    color: #110ee8;
+    box-shadow: 0 5px 10px #87fffd;
+    border-radius: 5%;
+}
+
+#id_wradchuk {
+    margin: 10px 0px;
+    background-color: #f00;
+    height: 500px;
+}
+
+#id_contact {
+    margin: 10px 0px;
+    background-color: #0f0;
+    height: 500px;
+}
+
+
+#id_link {
+    margin: 10px 0px;
+    background-color: #00f;
+    height: 500px;
+}
+
+
+#id_html5css3 {
+    margin: 10px 0px;
+    background-color: #f0f;
+    height: 500px;
+}
+
+
+
+
