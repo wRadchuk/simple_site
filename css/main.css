@@ -1,4 +1,9 @@
+
+
 body {
+    margin: 0;
+    padding: 0;
+
     background-color: #9a89bb;
     font-size: 14px;
     line-height: 1.5;
@@ -7,9 +12,9 @@ body {
 
 
 .header {
-    width: 100%;
-    height: 100px;
+    height: 64px;
     background-color: #3f51b5;
+    padding: 20px;
 }
 .header-logo {
     display: block;
@@ -18,8 +23,6 @@ body {
     float: left;
     box-shadow: 0 5px 10px #87fffd;
     border-radius: 50%;
-    margin: 10px;
-    padding: 5px;
 }
 .header-logo:hover {
     cursor: pointer;
@@ -27,13 +30,10 @@ body {
 
 }
 .header-menu {
-    width: auto;
-    height: 50px;
     float: right;
     list-style: none;
-    margin: 30px auto;
 }
-.header-menu li {
+.header-menu-list {
     display: inline;
 }
 .header-link {
@@ -41,25 +41,32 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
-    margin: 10px;
+    margin: auto 10px;
 }
 .header-link:hover {
     background-color: #0ee228;
-    color: #110ee8;
+    color: #ff000a;
     box-shadow: 0 5px 10px #87fffd;
     border-radius: 5%;
 }
 
 
-
-#card {
-    width: 50%;
+.info-block {
+    width: 60%;
     padding: 20px;
     margin: 30px auto;
-    background-color: #94b5e2;
     box-shadow: 0 5px 10px #ccc;
     border-radius: 10px;
 }
+.info-block:nth-child(odd) {
+    background-color: #f1cfcf;
+}
+
+.info-block:nth-child(even) {
+    background-color: #94b5e2;
+}
+
+
 .card-photo {
     display: block;
     width: 200px;
@@ -86,33 +93,22 @@ body {
 }
 
 
-#crib {
-    width: 50%;
-    padding: 20px;
-    margin: 30px auto;
-    background-color: #f1cfcf;
-    box-shadow: 0 5px 10px #ccc;
-    border-radius: 10px;
-}
 
-#res {
-    width: 50%;
-    padding: 20px;
-    margin: 30px auto;
-    background-color: #94b5e2;
-    box-shadow: 0 5px 10px #ccc;
-    border-radius: 10px;
-}
 
 
 .footer {
-    width: 100%;
     margin-top: 100px;
+    padding: 20px;
     background: #541c1c;
     height: 100px;
 }
 
-.footer p {
-    padding: 20px 20px 20px 20px;
+.footer-link {
     color: #e2a700;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #160d81;
+    text-decoration: none;
 }
