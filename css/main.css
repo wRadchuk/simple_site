@@ -4,16 +4,23 @@ body {
     margin: 0;
     padding: 0;
 
-    background-color: #9a89bb;
+    color: #000;
+    background-color: #e4e4e4;
     font-size: 14px;
     line-height: 1.5;
     font-family: Tahoma;
 }
 
+.header-link, .info-block-link, .footer-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #386d10;
+}
+
 
 .header {
     height: 64px;
-    background-color: #3f51b5;
+    background-color: #223152;
     padding: 20px;
 }
 .header-logo {
@@ -37,11 +44,9 @@ body {
     display: inline;
 }
 .header-link {
-    cursor: pointer;
-    text-decoration: none;
     text-transform: uppercase;
-    color: #fff;
     margin: auto 10px;
+    color: #fff;
 }
 .header-link:hover {
     background-color: #0ee228;
@@ -59,13 +64,14 @@ body {
     border-radius: 10px;
 }
 .info-block:nth-child(odd) {
-    background-color: #f1cfcf;
+    background-color: #a9b169;
 }
-
 .info-block:nth-child(even) {
-    background-color: #94b5e2;
+    background-color: #bec2c7;
 }
-
+.info-block-link:hover {
+    color: #1908eb;
+}
 
 .card-photo {
     display: block;
@@ -99,16 +105,14 @@ body {
 .footer {
     margin-top: 100px;
     padding: 20px;
-    background: #541c1c;
+    background: #031f16;
     height: 100px;
 }
 
 .footer-link {
     color: #e2a700;
-    text-decoration: none;
 }
 
 .footer-link:hover {
     color: #160d81;
-    text-decoration: none;
 }
