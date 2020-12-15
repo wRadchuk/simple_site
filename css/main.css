@@ -1,15 +1,13 @@
 
 
 body {
-    margin: 0;
-    padding: 0;
-
     color: #000;
     background-color: #e4e4e4;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 1.5;
     font-family: Tahoma;
 }
+
 
 .header-link, .info-block-link, .footer-link {
     cursor: pointer;
@@ -34,8 +32,9 @@ body {
 .header-logo:hover {
     cursor: pointer;
     box-shadow: 0 5px 10px #12f72e;
-
 }
+
+
 .header-menu {
     float: right;
     list-style: none;
@@ -45,11 +44,13 @@ body {
 }
 .header-link {
     text-transform: uppercase;
-    margin: auto 10px;
+    font-size: 0.6em;
     color: #fff;
+    margin-left: 10px;
 }
 .header-link:hover {
     background-color: #0ee228;
+    font-size: 0.6em;
     color: #ff000a;
     box-shadow: 0 5px 10px #87fffd;
     border-radius: 5%;
@@ -57,11 +58,9 @@ body {
 
 
 .info-block {
-    width: 60%;
     padding: 20px;
-    margin: 30px auto;
+    margin: 0 auto;
     box-shadow: 0 5px 10px #ccc;
-    border-radius: 10px;
 }
 .info-block:nth-child(odd) {
     background-color: #a9b169;
@@ -81,21 +80,27 @@ body {
     border-radius: 50%;
 }
 .card-title {
-    font-size: 20px;
+    font-size: 1.4em;
     text-align: center;
     color: #131c86;
 }
+
 .card-text {
-    font-size: 14px;
+    font-size: 1em;
 }
+
 .subtitle {
-    font-size: 18px;
+    font-size: 1.2em;
     color: #386920;
 }
 .card-list {
-    padding-left: 0px;
+    padding-left: 0;
     list-style-position: inside;
-    font-size: 14px;
+    font-size: 1em;
+}
+
+.card-list li {
+    margin: 10px 0;
 }
 
 
@@ -103,10 +108,9 @@ body {
 
 
 .footer {
-    margin-top: 100px;
     padding: 20px;
     background: #031f16;
-    height: 100px;
+    font-size: 14px;
 }
 
 .footer-link {
@@ -114,5 +118,22 @@ body {
 }
 
 .footer-link:hover {
-    color: #160d81;
+    color: #17e86b;
+}
+
+
+@media only screen and (min-width: 480px) {
+/* Здесь стили более разумных, но все еще мобильных устройств. Android, iPhone  и так далее. */
+}
+
+@media only screen and (min-width: 768px) {
+/* Планшеты в режиме portrait. */
+}
+
+@media only screen and (min-width: 992px) {
+/* Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп. */
+}
+
+@media only screen and (min-width: 1382px) {
+/* Десктоп с большими разрешениями, телевизоры. */
 }
