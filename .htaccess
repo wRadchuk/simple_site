@@ -1,0 +1,18 @@
+# Редирект
+RewriteEngine on
+RewriteRule ^page/([^/.]+)/?$ index.php?page=$1 [L]
+
+
+ErrorDocument 400 /page/400
+ErrorDocument 401 /page/401
+ErrorDocument 403 /page/403
+ErrorDocument 404 /page/404
+ErrorDocument 500 /page/500
+# Конец редиректа
+
+
+
+# Кодировка сайта
+AddDefaultCharset UTF-8
+# Конец блока с кодировкой
+

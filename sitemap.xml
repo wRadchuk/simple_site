@@ -1,0 +1,103 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Карта сайта - начало -->
+
+
+    <!-- Главная страница сайта -->
+    <url>
+        <loc>https://radchuk.ru/</loc>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Главная страница сайта - не желательный адрес -->
+    <url>
+        <loc>https://radchuk.ru/index.php</loc>
+        <changefreq>always</changefreq>
+        <priority>0.1</priority>
+    </url>
+
+
+
+    <!-- Главная страница - блок об авторе -->
+    <url>
+        <loc>https://radchuk.ru/page/home#card</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Главная страница сайта - блок со шпаргалкой -->
+    <url>
+        <loc>https://radchuk.ru/page/home#crib</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Главная страница сайта - блок полезные ресурсы-->
+    <url>
+        <loc>https://radchuk.ru/page/home#res</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+
+
+    <!-- Главная страница сайта - переход к шапке сайта-->
+    <url>
+        <loc>https://radchuk.ru/page/home#header</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+
+
+
+    <!-- Статистика посищений -->
+    <url>
+        <loc>https://radchuk.ru/page/stat</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+
+
+    <!-- Статистика ошибка 400 -->
+    <url>
+        <loc>https://radchuk.ru/page/400</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+
+    <!-- Статистика ошибка 401 -->
+    <url>
+        <loc>https://radchuk.ru/page/401</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+
+    <!-- Статистика ошибка 403 -->
+    <url>
+        <loc>https://radchuk.ru/page/403</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+
+    <!-- Статистика ошибка 404 -->
+    <url>
+        <loc>https://radchuk.ru/page/404</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+
+
+    <!-- Статистика ошибка 500 -->
+    <url>
+        <loc>https://radchuk.ru/page/500</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+
+
+    <!-- Карта сайта - конец -->
+
+</urlset>

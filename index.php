@@ -1,35 +1,68 @@
 <!doctype html>
 <html lang='ru'>
 <head>
+    <meta name="yandex-verification" content="19eebd51726cbdf6" />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
-    <link rel='shortcut icon' href='img/favicon.png' type='image/png'>
-    <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon'>
+    <link rel='shortcut icon' href='https://radchuk.ru/img/favicon.png' type='image/png'>
+    <link rel='shortcut icon' href='https://radchuk.ru/img/favicon.ico' type='image/x-icon'>
     <title>Владимир Радчук</title>
     <?php $getTime = ''.time();?>
-    <link href="css/normalize.css?<?php echo $getTime;?>" rel='stylesheet'>
-    <link href="css/main.css?<?php echo $getTime;?>" rel='stylesheet'>
+    <link href="https://radchuk.ru/css/normalize.css?<?php echo $getTime;?>" rel='stylesheet'>
+    <link href="https://radchuk.ru/css/main.css?<?php echo $getTime;?>" rel='stylesheet'>
 
     <meta name='description' content='Сайт содержит полезную информацию.'/>
     <meta name='keywords' content='HTML, CSS, Верстка, Основы HTML, Основы CSS, Теги, Верстальщик, Сайт, Уроки CSS, Уроки HTML, Создание сайтов, Стили, Каскадные, Таблицы, Основы, Уроки, Учимся, Владимир, Радчук, Владимир Радчук, wRadchuk, radchuk, Селектор, JS, PHP, ООП'/>
 </head>
 
+
     <body>
         <header class="header" id="header">
-            <img class="header-logo" src="img/logo.png" alt="header-logo">
+            <a href="/page/stat"><img class="header-logo" src="https://radchuk.ru/img/logo.png" alt="header-logo"></a>
             <nav class="header-nav">
                 <ul class="header-menu">
-                <li class="header-menu-list"><a class="header-link" href="#card">Вступление</a></li>
-                <li class="header-menu-list"><a class="header-link" href="#crib">Шпаргалка</a></li>
-                <li class="header-menu-list"><a class="header-link" href="#res">Ресурсы</a></li>
+                <li class="header-menu-list"><a class="header-link" href="/page/home#card">Вступление</a></li>
+                <li class="header-menu-list"><a class="header-link" href="/page/home#crib">Шпаргалка</a></li>
+                <li class="header-menu-list"><a class="header-link" href="/page/home#res">Ресурсы</a></li>
                 </ul>
             </nav>
         </header>
 
 
+        <?php
+        require_once 'php/wRadchukConfig.php';
+
+        // подключаемся к серверу
+        $link = mysqli_connect($wrDbHost, $wrDbUser, $wrDbPass, $wrDbName) or die("Connect: Ошибка " . mysqli_error($link));
+        // выполняем операции с базой данных
+        $query = "SET NAMES 'utf8';";
+        $result = mysqli_query($link, $query) or die("SET: Ошибка " . mysqli_error($link));
+
+        $s_time   = $_SERVER['REQUEST_TIME'];    // Время запрос
+        $s_addr   = $_SERVER['REMOTE_ADDR'];     // IP клиента
+        $s_agent  = $_SERVER['HTTP_USER_AGENT']; // Браузер клиента
+        $s_ref    = getenv("HTTP_REFERER");      // От куда пришли
+        $s_script = '/';                         // Имя страници
+        $s_bname = '';
+
+
+        $bots = array('rambler', 'googlebot', 'aport', 'yahoo', 'msnbot', 'turtle', 'mail.ru', 'omsktele', 'yetibot', 'picsearch', 'sape.bot', 'sape_context', 'gigabot', 'snapbot', 'alexa.com', 'megadownload.net', 'askpeter.info', 'igde.ru', 'ask.com', 'qwartabot', 'yanga.co.uk', 'scoutjet', 'similarpages', 'oozbot', 'shrinktheweb.com', 'aboutusbot', 'followsite.com', 'dataparksearch', 'google-sitemaps', 'appEngine-google', 'feedfetcher-google', 'liveinternet.ru', 'xml-sitemaps.com', 'agama', 'metadatalabs.com', 'h1.hrn.ru', 'googlealert.com', 'seo-rus.com', 'yaDirectBot', 'yandeG', 'yandex', 'yandexSomething', 'Copyscape.com', 'AdsBot-Google', 'domaintools.com', 'Nigma.ru', 'bing.com', 'dotnetdotcom');
+
+        foreach($bots as $bot)
+            if(stripos($s_agent, $bot) !== false) {
+                $s_bname = $bot;
+            }
+
+        if($_GET['page']=='home' || $_GET['page']=='') {
+            $s_script = '/page/home';     // Имя страници
+
+        ?>
+
+
         <section class="info-block" id="card">
-            <img class="card-photo" src="img/photo.jpg" alt="Владимир Радчук">
+            <img class="card-photo" src="https://radchuk.ru/img/photo.jpg" alt="Владимир Радчук">
+
             <h1 class="card-title">Владимир Радчук</h1>
 
             <div class="card-text">
@@ -98,9 +131,91 @@
             </ul>
         </section>
 
+        <?php
+        }
+        else if($_GET['page']=='stat') {
+            $s_script = '/page/stat';     // Имя страници
+
+            $query1 ="SELECT `time`, `bname`, `agent`, `addr`, `ref`, `script` FROM visitor ORDER BY `id` DESC";
+
+            $result = mysqli_query($link, $query1) or die("Ошибка " . mysqli_error($link));
+
+            if($result) {
+                $rows = mysqli_num_rows($result); // количество полученных строк
+
+                for ($i = 0 ; $i < $rows ; ++$i) {
+                    $row = mysqli_fetch_row($result);
+
+
+
+                    $m_time   = $row[0]; // Время запрос
+                    $m_bname  = $row[1]; // Бот
+                    if($m_bname=='') $m_bname = 'ЧЕЛОВЕК';
+                    $m_agent  = $row[2]; // Браузер клиента
+                    $m_addr   = $row[3]; // IP клиента
+                    $m_ref    = $row[4]; // От куда
+                    if($m_ref=='') $m_ref = '..отсутствует..';
+                    $m_script = $row[5]; // Имя страници
+
+
+                    if($m_addr!='31.131.78.26') {
+
+                        echo '<ul class="info-block">';
+
+                        echo "<h1 class='subtitle'>Время посещения:</h1><li>".date("d/m/Y H:i:s", $m_time)."</li>";
+                        echo "<h1 class='subtitle'>Софт:</h1><li>".$m_agent."</li>";
+                        echo "<h1 class='subtitle'>Кто смотрел:</h1><li>".$m_bname."</li>";
+                        echo "<h1 class='subtitle'>IP-адрес:</h1><li>".$m_addr."</li>";
+                        echo "<h1 class='subtitle'>Трафик из:</h1><li>".$m_ref."</li>";
+                        echo "<h1 class='subtitle'>Страница:</h1><li>".$m_script."</li>";
+
+                        echo '</ul>';
+                    }
+
+                }
+
+                // очищаем результат
+                mysqli_free_result($result);
+
+            }
+        }
+        else if($_GET['page']=='400') {
+            $s_script = '/page/400';     // Имя страници
+            echo "400 page";
+        }
+        else if($_GET['page']=='401') {
+            $s_script = '/page/401';     // Имя страници
+            echo "401 page";
+        }
+        else if($_GET['page']=='403') {
+            $s_script = '/page/403';     // Имя страници
+            echo "403 page";
+        }
+
+        else if($_GET['page']=='404') {
+            $s_script = '/page/404';     // Имя страници
+            echo "404 page";
+        }
+
+        else if($_GET['page']=='500') {
+            $s_script = '/page/500';     // Имя страници
+            echo "500 page";
+        }
+
+        else {
+            $s_script = '/page/404';     // Имя страници
+            echo "404 page";
+        }
+
+        $query = "INSERT INTO `visitor`(`time`, `bname`, `agent`, `addr`, `ref`, `script`) VALUES ('".$s_time."', '".$s_bname."', '".$s_agent."', '".$s_addr."', '".$s_ref."' ,'".$s_script."');";
+
+        mysqli_query($link, $query) or die("INSERT: Ошибка " . mysqli_error($link));
+
+        ?>
+
 
         <footer class="footer">
-            <p>© <a class="footer-link" href="https://vk.com/wradchuk" target="_blank">Владимир Радчук</a> | <a class="footer-link" href="#header">В этом мире ничего не даётся просто так - даже в момент зачатия мы боремся за своё право на жизнь</a></p>
+            <p>© <a class="footer-link" href="https://vk.com/wradchuk" target="_blank">Владимир Радчук</a> | <a class="footer-link" href="/page/home#header">В этом мире ничего не даётся просто так - даже в момент зачатия мы боремся за своё право на жизнь</a></p>
         </footer>
 
 
@@ -108,4 +223,4 @@
 </html>
 
 
-<!-- <?php require_once 'visitor.php'; ?> -->
+
