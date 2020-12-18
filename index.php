@@ -47,7 +47,7 @@
         $s_bname = '';
 
 
-        $bots = array('rambler', 'googlebot', 'aport', 'yahoo', 'msnbot', 'turtle', 'mail.ru', 'omsktele', 'yetibot', 'picsearch', 'sape.bot', 'sape_context', 'gigabot', 'snapbot', 'alexa.com', 'megadownload.net', 'askpeter.info', 'igde.ru', 'ask.com', 'qwartabot', 'yanga.co.uk', 'scoutjet', 'similarpages', 'oozbot', 'shrinktheweb.com', 'aboutusbot', 'followsite.com', 'dataparksearch', 'google-sitemaps', 'appEngine-google', 'feedfetcher-google', 'liveinternet.ru', 'xml-sitemaps.com', 'agama', 'metadatalabs.com', 'h1.hrn.ru', 'googlealert.com', 'seo-rus.com', 'yaDirectBot', 'yandeG', 'yandex', 'yandexSomething', 'Copyscape.com', 'AdsBot-Google', 'domaintools.com', 'Nigma.ru', 'bing.com', 'dotnetdotcom');
+        $bots = array('rambler', 'googlebot', 'aport', 'yahoo', 'msnbot', 'turtle', 'mail.ru', 'omsktele', 'yetibot', 'picsearch', 'sape.bot', 'sape_context', 'gigabot', 'snapbot', 'alexa.com', 'megadownload.net', 'askpeter.info', 'igde.ru', 'ask.com', 'qwartabot', 'yanga.co.uk', 'scoutjet', 'similarpages', 'oozbot', 'shrinktheweb.com', 'aboutusbot', 'followsite.com', 'dataparksearch', 'google-sitemaps', 'appEngine-google', 'feedfetcher-google', 'liveinternet.ru', 'xml-sitemaps.com', 'agama', 'metadatalabs.com', 'h1.hrn.ru', 'googlealert.com', 'seo-rus.com', 'yaDirectBot', 'yandeG', 'yandex', 'yandexSomething', 'Copyscape.com', 'AdsBot-Google', 'domaintools.com', 'Nigma.ru', 'bing.com', 'dotnetdotcom', 'python-requests', 'BackupLand', 'nimbostratus-Bot', 'google favicon');
 
         foreach($bots as $bot)
             if(stripos($s_agent, $bot) !== false) {
