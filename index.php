@@ -47,12 +47,40 @@
         $s_bname = '';
 
 
-        $bots = array('rambler', 'googlebot', 'aport', 'yahoo', 'msnbot', 'turtle', 'mail.ru', 'omsktele', 'yetibot', 'picsearch', 'sape.bot', 'sape_context', 'gigabot', 'snapbot', 'alexa.com', 'megadownload.net', 'askpeter.info', 'igde.ru', 'ask.com', 'qwartabot', 'yanga.co.uk', 'scoutjet', 'similarpages', 'oozbot', 'shrinktheweb.com', 'aboutusbot', 'followsite.com', 'dataparksearch', 'google-sitemaps', 'appEngine-google', 'feedfetcher-google', 'liveinternet.ru', 'xml-sitemaps.com', 'agama', 'metadatalabs.com', 'h1.hrn.ru', 'googlealert.com', 'seo-rus.com', 'yaDirectBot', 'yandeG', 'yandex', 'yandexSomething', 'Copyscape.com', 'AdsBot-Google', 'domaintools.com', 'Nigma.ru', 'bing.com', 'dotnetdotcom', 'python-requests', 'BackupLand', 'nimbostratus-Bot', 'google favicon');
+        $bots = array(
+            // Google
+            'googlebot',
+            'Google Favicon',
+
+            //Yandex
+            'yandex',
+
+            // Mail
+            'mail.ru',
+
+            // Other
+            'Nimbostratus-Bot',
+            'BackupLand',
+            'python-requests',
+            'Dy robot',
+            'Python-urllib',
+            'Go-http-client',
+            'Orpho.Ru',
+            'bing.com',
+            'WebDataStats',
+            'Dataprovider.com',
+            'vkShare',
+            'Konturbot'
+
+        );
 
         foreach($bots as $bot)
             if(stripos($s_agent, $bot) !== false) {
                 $s_bname = $bot;
             }
+
+
+        if(stripos($s_agent, 'meizu X8') !== false) $s_bname = "Владимир Радчук";
 
         if($_GET['page']=='home' || $_GET['page']=='') {
             $s_script = '/page/home';     // Имя страници
@@ -150,7 +178,7 @@
 
                     $m_time   = $row[0]; // Время запрос
                     $m_bname  = $row[1]; // Бот
-                    if($m_bname=='') $m_bname = 'ЧЕЛОВЕК';
+                    if($m_bname=='') $m_bname = 'Неизвестный пользователь';
                     $m_agent  = $row[2]; // Браузер клиента
                     $m_addr   = $row[3]; // IP клиента
                     $m_ref    = $row[4]; // От куда
